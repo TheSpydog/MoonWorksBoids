@@ -177,6 +177,7 @@ class Program : Game
 			);
 		}
 
+		// Create and populate the compute buffers
 		particleBuffers = new Buffer[2];
 		for (int i = 0; i < particleBuffers.Length; i++)
 		{
@@ -185,7 +186,6 @@ class Program : Game
 				BufferUsageFlags.Compute | BufferUsageFlags.Vertex,
 				NUM_PARTICLES
 			);
-
 			cmdbuf.SetBufferData<Particle>(
 				particleBuffers[i],
 				initialParticleData
